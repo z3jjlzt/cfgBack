@@ -89,8 +89,6 @@ fi
 
 # some more ls aliases
 alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
 alias as='~/Android-studio/bin/studio.sh &'
 alias bwg='ssh -p 27503 kkk@45.62.110.91'
 alias T='~/learnPython/tran.py'
