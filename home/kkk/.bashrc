@@ -89,9 +89,8 @@ fi
 
 # some more ls aliases
 alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
 alias as='~/Android-studio/bin/studio.sh &'
+alias fq='export http_proxy=http://localhost:8123'
 alias bwg='ssh -p 27503 kkk@45.62.110.91'
 alias T='~/learnPython/tran.py'
 alias wyy='~/learnPython/wyyyy/wyyyy.py'
@@ -123,5 +122,6 @@ if ! shopt -oq posix; then
   fi
 fi
 set -o vi
-export http_proxy=http://localhost:8123
-export https_proxy=http://localhost:8123
+# 全局代理，否则单个sessin代理，全局会导致wyy失效。
+#export http_proxy=http://localhost:8123
+#export https_proxy=http://localhost:8123
