@@ -122,6 +122,7 @@ if ! shopt -oq posix; then
   fi
 fi
 set -o vi
+<<<<<<< HEAD
 # 全局代理，否则单个sessin代理，全局会导致wyy失效。
 #export http_proxy=http://localhost:8123
 #export https_proxy=http://localhost:8123
