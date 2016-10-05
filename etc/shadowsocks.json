@@ -1,0 +1,8 @@
+{
+"server" : "45.62.110.91",
+"server_port" : 666,
+"password" : "z3jjlzt",
+"method" : "aes-256-cfb",
+"local_port": 1080, 
+"local_address": "127.0.0.1"
+}
