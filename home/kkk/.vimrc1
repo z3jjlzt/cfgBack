@@ -1,0 +1,55 @@
+set modeline
+set nu
+set relativenumber
+set scrolloff=3
+set tabstop=4
+set shiftwidth=4
+set autoindent
+
+" set headcomment start
+autocmd BufNewFile *.sql,*.sh exec ":call SetHeader()"
+
+func SetHeaderForSql()
+	call append(0,'--#================================================================')   
+	call append(1, '--#  ')   
+	call append(2, '--#    Copyright (C) 2013-'.strftime("%Y").' z3jjlzt. All rights reserved.')  
+	call append(3, '--#    Filename：'.expand("%:t"))   
+	call append(4, '--#    Create: '.strftime("%Y-%m-%d %H:%M:%S"))
+	call append(5, '--#	   Last Modified: '.strftime("%Y-%m-%d %H:%M:%S"))
+	call append(6, '--#    Author: z3jjlzt  ')   
+	call append(7, '--#    Email: z3jj@qq.com  ')   
+	call append(8, '--#  ')   
+	call append(9, '--#    Description:')   
+	call append(10, '--#  ')   
+	call append(11,'--#================================================================')   
+	call append(12, '')   
+endfunc
+
+func SetHeaderForShell()
+	call append(0, '#!/bin/bash')   
+	call append(1,'#================================================================')   
+	call append(2, '#  ')   
+	call append(3, '#    Copyright (C) 2013-'.strftime("%Y").' z3jjlzt. All rights reserved.')  
+	call append(4, '#    Filename：'.expand("%:t"))   
+	call append(5, '#    Create: '.strftime("%Y-%m-%d %H:%M:%S"))
+	call append(6, '#	   Last Modified: '.strftime("%Y-%m-%d %H:%M:%S"))
+	call append(7, '#    Author: z3jjlzt  ')   
+	call append(8, '#    Email: z3jj@qq.com  ')   
+	call append(9, '#  ')   
+	call append(10, '#    Description:')   
+	call append(11, '#  ')   
+	call append(12,'#================================================================')   
+	call append(13, '')   
+endfunc
+
+func SetHeader()
+	if &filetype == 'sql'
+		call SetHeaderForSql()
+	
+    elseif &filetype == 'sh'
+        call SetHeaderForShell()
+	
+	endif
+
+endfunc
+
